@@ -13,14 +13,14 @@ acuerdo a la normativa legal vigente
 ## :microscope: Documentacion
 
 Se ha recopilado la siguiente informacion en la cual se sustenta el desarrollo del proyecto. Visita la
-siguiente pagina[documentacion]
+siguiente [pagina][documentacion]
 
 ## :airplane: Demo
 
-Visita la siguiente pagina[produccion]
+Visita la siguiente [pagina][produccion]
 
 ## :black_nib: Autor
--  Jairo Salazar [github_url] Software Developer
+-  [Jairo Salazar][github_url] Desarrollador de Software
 
 [produccion]: https://api.nasa.gov/
 [documentacion]: https://github.com/jsv1280/calculadora-seguridad-social-colombia/projects
