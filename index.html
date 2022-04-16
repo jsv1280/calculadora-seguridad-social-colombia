@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Seguridad Social Colombia</title>
+</head>
+<body>
+
+    <h2>Seguridad Social Trabajadores Independientes</h2>
+    <label for="">Salario Mensual Recibido: </label>
+    <input type="text" id="salario_mensual" name="salario_mensual">
+
+    <br>
+
+    <label for="ibc">Ingreso Base de Cotizacion:</label>
+    <input type="text" id="ibc" name="ibc" readonly>
+
+    <br>
+
+    <label for="pension">Aporte Pension:</label>
+    <input type="text" id="pension" name="pension" readonly>
+
+    <br> 
+
+    <label for="salud">Aporte Salud:</label>
+    <input type="text" id="salud" name="salud" readonly>
+
+    <br> 
+
+    <label for="riesgos_laborales">Aporte Riesgos laborales:</label>
+    <input type="text" id="riesgos_laborales" name="riesgos_laborales" readonly>
+    
+    
+    <script>
+
+        function inicio(){
+
+            let salarioMensual = document.getElementById("salario_mensual");
+            salarioMensual.addEventListener('change', function () {
+                mostrarIBC();
+            });
+
+        }
+
+        function calcularIBC(){
+            const PORCENTAJE_IBC = 40;
+
+            let salarioMensual = parseInt(document.getElementById("salario_mensual").value);
+            
+            return salarioMensual * 40 / 100;
+        }
+
+        function mostrarIBC(){
+            let ibc = calcularIBC();
+
+            document.getElementById("ibc").value = ibc;
+
+            let salud = calcularSalud(ibc);
+            document.getElementById("salud").value = salud;
+
+            let pension = calcularPension(ibc);
+            document.getElementById("pension").value = pension;
+
+            let riesgosLaborales = calcularRiesgosLaborales(ibc);
+            document.getElementById("riesgos_laborales").value = riesgosLaborales;
+        }
+
+        function calcularPension(ibc){
+            const PORCENTAJE_PENSION = 16;
+
+            return ibc * PORCENTAJE_PENSION / 100;
+        }
+
+        function calcularSalud(ibc){
+            const PORCENTAJE_SALUD = 12.5;
+
+            return ibc * PORCENTAJE_SALUD / 100;
+        }
+
+        function calcularRiesgosLaborales(ibc){
+            const PORCENTAJE_ARL = 0.522;
+
+            return ibc * PORCENTAJE_ARL / 100;
+        }
+
+       
+        document.addEventListener('DOMContentLoaded', function () {
+            inicio();
+        }, false);
+
+    </script>
+</body>
+</html>
